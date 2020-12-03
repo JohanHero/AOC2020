@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class day1 {
 
   public static void main(String[] args) throws FileNotFoundException {
-    File f = new File("src/com/aoc/input/day1.txt");
+    File f = new File("input/day1.txt");
     Scanner sc = new Scanner(f);
     int a;
     int b;
