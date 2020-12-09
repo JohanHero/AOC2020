@@ -5,12 +5,7 @@ public class test {
   public static void main(String arg[]) {
     int n = 6;
     double a[] = new double[n];
-    a[0] = 10;
-    a[1] = 20;
-    a[2] = 30;
-    a[3] = 40;
-    a[4] = 50;
-    a[5] = 60;
+
 
     double m = 0;
     if (n % 2 == 1) {
