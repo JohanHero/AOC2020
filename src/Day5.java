@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Day5 {
@@ -15,11 +17,15 @@ public class Day5 {
     int lowerRow = 0;
     int upperRow = 127;
     int seat = 0;
+    int highestSeat = 0;
+
     int row = 0;
     int right = 7;
     int left = 0;
     String line;
     int highestSeatID = 0;
+
+    ArrayList<Integer> IDS = new ArrayList<>();
 
 
   while(( line = br.readLine()) != null) {
@@ -48,8 +54,12 @@ public class Day5 {
         seat = right;
       }
     }
-    if((row * 8 + seat) > highestSeatID)
+    IDS.add(row * 8 + seat);
+    if((row * 8 + seat) > highestSeatID){
       highestSeatID = row * 8 + seat;
+      highestSeat = seat;
+    }
+
 
     lowerRow = 0;
     upperRow = 127;
@@ -59,7 +69,18 @@ public class Day5 {
     left = 0;
 
     }
-    System.out.println(highestSeatID);
+
+    System.out.println(IDS);
+    Collections.<Integer>sort(IDS);
+    System.out.println();
+    System.out.println(IDS);
+    for(int i =0 ; i < 10000; i++){
+      if (IDS.get(i) != 71 + i) {
+        System.out.println(" HERE IS MY SEAT " + "" +  (IDS.get(i)-1) );
+        break;
+      }
+
+    }
 
   }
 
